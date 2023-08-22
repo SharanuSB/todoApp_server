@@ -53,7 +53,7 @@ usersController.verify = async (req, res) => {
 
         sendToken(res, user, 200, "Account Verified")
     } catch (error) {
-
+        res.status(500).json({ success: false, message: error.message })
     }
 }
 
